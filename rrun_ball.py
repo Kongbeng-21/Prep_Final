@@ -2,7 +2,7 @@ import turtle
 from balll import Ball
 from sevensec import sec
 import random
-class run:
+class Run:
     def __init__(self):
         self.num_balls = 5
         turtle.speed(0)
@@ -38,43 +38,29 @@ class run:
             turtle.left(90)
             turtle.forward(2*self.canvas_height)
             turtle.left(90)
-
+b = Ball()
+r = Run()
+dt = 0.5 # time step
 Tom = turtle.Turtle()
 tom_color = (255, 0, 0)
-sc = sec(Tom,tom_color)
+sc=sec(Tom, tom_color)
 delay_in_seconds = 0.01
-ip_b = Ball()
-runn = run()
-ct=0
-fc=0
-dt = 0.2 # time step
+ct = 0
+fc = 0
 while (True):
     turtle.clear()
-    runn.draw_border()
-    for i in range(runn.num_balls):
-        ip_b.draw_ball(runn.ball_color[i], runn.ball_radius, runn.xpos[i], runn.ypos[i])
-        ip_b.move_ball(i, runn.xpos, runn.ypos, runn.vx, runn.vy, dt)
-        ip_b.update_ball_velocity(i, runn.xpos, runn.ypos, runn.vx, runn.vy, runn.canvas_width, runn.canvas_height, runn.ball_radius)
-    sc.clear()
+    r.draw_border()
+    for i in range(r.num_balls):
+        b.draw_ball(r.ball_color[i], r.ball_radius, r.xpos[i], r.ypos[i])
+        b.move_ball(i, r.xpos, r.ypos, r.vx, r.vy, dt)
+        b.update_ball_velocity(i, r.xpos, r.ypos, r.vx, r.vy, r.canvas_width, r.canvas_height, r.ball_radius)
+    fc = fc +1
+    sc.clear(Tom)
     sc.draw(Tom, ct)
-    
-    fc += 1
-    if fc >=20:
-        ct = (ct+1)%10
-        fc = 0
+    if fc >= 10:
+        ct=(ct + 1)%10
+        fc=0
     sc.my_delay(delay_in_seconds)
     turtle.update()
-
 # hold the window; close it by clicking the window close 'x' mark
 turtle.done()
-
-
-
-"""while True:
-    for i in range(0, 10):
-        sc.clear()
-        sc.draw(Tom, i)
-        sc.my_delay(delay_in_seconds)
-        turtle.update()
-
-turtle.done()"""

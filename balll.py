@@ -2,7 +2,6 @@ import turtle
 class Ball:
     def __init__(self):
         pass
-    
     def draw_ball(self,color, size, x, y):
         # draw a circle of radius equals to size at x, y coordinates and paint it with color
         turtle.penup()

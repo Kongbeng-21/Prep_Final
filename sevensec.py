@@ -4,7 +4,7 @@ class sec:
         turtle.speed(0)
         turtle.tracer(0)
         turtle.hideturtle()
-        turtle.colormode(255)   
+        turtle.colormode(255)
         self.my_turtle = my_turtle
         my_turtle.color(color)
         my_turtle.penup()
@@ -133,14 +133,13 @@ class sec:
             my_turtle.left(90)
             my_turtle.penup()
 
-    def clear(self):
-        self.my_turtle.clear()
+    def clear(self,my_turtle):
+        my_turtle.clear()
 
     def my_delay(self,dt):
         import time
         start =  time.time()
         while time.time() - start < dt:
             pass
-
 
 
